@@ -1,0 +1,133 @@
+/* Tổng thể cho container của footer */
+.footer-container {
+    background-color: #f6f6f6;
+    padding: 70px 0;
+    font-family: 'Poppins', sans-serif;
+    /* Sử dụng font chữ giống hoặc tương tự */
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Lớp bọc nội dung, căn giữa và tạo layout */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    /* Khoảng cách giữa các cột */
+}
+
+/* Kiểu cho từng cột/phần trong footer */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Phần logo và bản quyền */
+.footer-logo {  
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 10px 0;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Tiêu đề của các cột */
+.footer-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Danh sách các liên kết */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #000;
+}
+
+/* Form đăng ký */
+.subscribe-form p {
+    font-size: 15px;
+}
+
+.subscribe-form input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    padding: 10px 0;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.subscribe-form input:focus {
+    outline: none;
+    border-bottom-color: #000;
+}
+
+.subscribe-form button {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+    width: auto;
+    letter-spacing: 1px;
+}
+
+/* Responsive cho màn hình nhỏ hơn (ví dụ: điện thoại) */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        /* 2 cột trên tablet */
+    }
+
+    .about {
+        grid-column: 1 / -1;
+        /* Phần logo chiếm hết chiều rộng */
+        text-align: center;
+        /* Căn giữa nội dung */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        /* 1 cột trên mobile */
+        text-align: center;
+        /* Căn giữa toàn bộ */
+    }
+
+    .subscribe-form button {
+        width: 100%;
+        text-align: center;
+    }
+}
