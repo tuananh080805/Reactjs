@@ -1,0 +1,305 @@
+/* src/state/OrderDetailPage.css */
+
+.order-detail-page-container {
+    width: 100%;
+    max-width: 900px;
+    /* Thu hẹp hơn trang danh sách */
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Sao chép breadcrumb & h1 từ OrdersPage.css */
+.order-detail-page-container .breadcrumb {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.order-detail-page-container .breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.order-detail-page-container .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.order-detail-page-container h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+/* Phần nội dung chi tiết */
+.order-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Các thẻ (card) chung */
+.order-summary-card,
+.order-items-card,
+.order-total-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.order-summary-card h3,
+.order-items-card h4,
+.order-total-card h4 {
+    margin: 0;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.order-summary-card p {
+    margin: 15px 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.order-summary-card p strong {
+    color: #333;
+    min-width: 150px;
+    display: inline-block;
+}
+
+/* Sao chép class status từ OrdersPage.css */
+.order-status {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+}
+
+.status-PENDING {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-DELIVERED {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-CANCELLED {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+/* Danh sách sản phẩm */
+.order-items-list {
+    padding: 10px 20px;
+}
+
+.order-product-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-product-item:last-child {
+    border-bottom: none;
+}
+
+.product-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.product-qty {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    min-width: 120px;
+    text-align: right;
+}
+
+/* Thẻ tổng tiền */
+.order-total-card {
+    background-color: #fdfdfd;
+}
+
+.order-total-card h4 {
+    background-color: #f5f5f5;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.total-line span:last-child {
+    font-weight: 600;
+    color: #333;
+}
+
+.order-total-card hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 5px 20px;
+}
+
+.total-line.grand-total span {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d9534f;
+    /* Màu đỏ cho tổng tiền */
+}
+/* === THÊM VÀO CUỐI FILE ORDERN DETAILPAGE.CSS === */
+
+/* Thẻ thông tin thanh toán mới */
+.payment-info-card {
+    border: 1px solid #007bff;
+    /* Viền màu xanh */
+    border-radius: 8px;
+    background-color: #f0f8ff;
+    /* Màu nền xanh nhạt */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Căn giữa nội dung */
+    padding: 20px;
+    gap: 15px;
+}
+
+.payment-info-card h4 {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 1.5rem;
+    /* To hơn */
+    font-weight: 600;
+    color: #0056b3;
+    background-color: transparent;
+    /* Bỏ nền xám */
+    border-bottom: none;
+    /* Bỏ viền */
+}
+
+.payment-info-card p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    text-align: center;
+    max-width: 500px;
+}
+
+/* Ảnh QR code */
+.qr-code-image {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Khối nội dung chuyển khoản */
+.transfer-content-box {
+    background-color: #ffffff;
+    border: 1px dashed #007bff;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.transfer-content-box p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0 0 10px 0;
+}
+
+.transfer-content-box strong {
+    font-size: 1.4rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #d9534f;
+    /* Màu đỏ */
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: block;
+    /* Hiển thị trên 1 dòng riêng */
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    /* Chống tràn */
+}
+
+/* Nút copy */
+.btn-copy {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-copy:hover {
+    background-color: #0056b3;
+}
+
+.account-holder-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0 !important;
+    /* Ghi đè margin của <p> */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.account-holder-name strong {
+    color: #007bff;
+    /* Màu xanh */
+    font-size: 1.2rem;
+}

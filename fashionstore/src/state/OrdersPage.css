@@ -1,0 +1,178 @@
+/* src/state/OrdersPage.css */
+
+.orders-page-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.orders-page-container .breadcrumb {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.orders-page-container .breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+}
+.orders-page-container .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.orders-page-container h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.no-orders p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 1.1rem;
+}
+
+/* (Bạn có thể thêm CSS cho .order-list và .order-item sau) */
+/* src/state/OrdersPage.css */
+
+/* ... (Toàn bộ CSS cũ của bạn ở trên) ... */
+
+/* --- DÁN PHẦN NÀY VÀO CUỐI FILE --- */
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Khoảng cách giữa các đơn hàng */
+}
+
+.order-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    /* Đảm bảo bo góc hoạt động */
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.order-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.order-status {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Thêm màu cho các trạng thái (bạn có thể thêm các status khác) */
+.status-PENDING {
+    background-color: #fff3cd;
+    /* Vàng nhạt */
+    color: #856404;
+}
+
+.status-DELIVERED {
+    background-color: #d4edda;
+    /* Xanh nhạt */
+    color: #155724;
+}
+
+.status-CANCELLED {
+    background-color: #f8d7da;
+    /* Đỏ nhạt */
+    color: #721c24;
+}
+
+.order-body {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.order-body p {
+    margin: 0 0 12px 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+.order-body p:last-child {
+    margin-bottom: 0;
+}
+
+.order-body p strong {
+    color: #333;
+    min-width: 120px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.order-footer {
+    padding: 15px 20px;
+    text-align: right;
+    border-top: 1px solid #eee;
+    background-color: #fdfdfd;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}

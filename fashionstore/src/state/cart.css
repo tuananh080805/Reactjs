@@ -1,0 +1,230 @@
+/* state/cart.css */
+
+.cart-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cart-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* === Bố cục 2 cột === */
+.cart-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* Cho phép xuống hàng trên di động */
+    gap: 2rem;
+}
+
+.cart-items-list {
+    flex: 3;
+    /* Chiếm 3/4 không gian */
+    min-width: 300px;
+}
+
+.cart-summary {
+    flex: 1;
+    /* Chiếm 1/4 không gian */
+    min-width: 280px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: fit-content;
+    /* Chỉ cao vừa đủ nội dung */
+    position: sticky;
+    top: 2rem;
+    /* Dính lại khi cuộn */
+}
+
+/* === Kiểu cho mỗi Item trong giỏ === */
+.cart-item {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-info h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    color: #555;
+    margin: 0.25rem 0;
+}
+
+.cart-item-quantity {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    color: #dc3545;
+    /* Màu đỏ */
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px;
+}
+
+.remove-button:hover {
+    color: #a71d2a;
+}
+
+/* === Kiểu cho Summary === */
+.cart-summary h3 {
+    margin-top: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.summary-divider {
+    border-bottom: 1px dashed #ccc;
+    margin: 1rem 0;
+}
+
+.summary-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    /* Màu xanh lá */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.checkout-button:hover {
+    background-color: #218838;
+}
+
+/* === Kiểu cho giỏ hàng trống === */
+.cart-empty {
+    text-align: center;
+    padding: 3rem;
+}
+
+.cart-empty p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.continue-shopping-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff;
+    /* Màu xanh dương */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.continue-shopping-link:hover {
+    background-color: #0056b3;
+}
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* Khoảng cách giữa các nút */
+    margin-top: 0.75rem;
+    /* Khoảng cách với giá tiền */
+}
+
+.quantity-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 30px;
+    /* Đặt chiều rộng */
+    height: 30px;
+    /* Đặt chiều cao */
+    line-height: 28px;
+    /* Căn giữa chữ */
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.quantity-button:hover {
+    background-color: #e0e0e0;
+}
+
+.quantity-button:disabled {
+    background-color: #f9f9f9;
+    color: #aaa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.quantity-display {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0 0.5rem;
+    min-width: 20px;
+    /* Đảm bảo số lượng có không gian */
+    text-align: center;
+    color: #333;
+}

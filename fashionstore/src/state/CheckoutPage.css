@@ -1,0 +1,276 @@
+/* src/state/CheckoutPage.css */
+
+.checkout-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.checkout-container h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.checkout-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* Cho phép xuống hàng trên mobile */
+    gap: 40px;
+}
+
+/* Cột trái: Form */
+.checkout-form {
+    flex: 1.5;
+    /* Lớn hơn cột tóm tắt */
+    min-width: 320px;
+}
+
+.checkout-form h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Quan trọng */
+    font-family: inherit;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-options .radio-item {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.payment-options .radio-item input[type="radio"] {
+    margin-top: 5px;
+    margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    accent-color: #007bff;
+}
+
+.payment-options .radio-item label {
+    font-weight: 400;
+    /* Ghi đè label mặc định */
+}
+
+.payment-options .radio-item label strong {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.payment-options .radio-item label p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.place-order-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+    transition: background-color 0.2s ease;
+}
+
+.place-order-button:hover {
+    background-color: #0056b3;
+}
+
+.place-order-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #d9534f;
+    margin-top: 15px;
+}
+
+/* Cột phải: Tóm tắt */
+.checkout-summary {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    height: fit-content;
+    /* Chỉ cao vừa đủ nội dung */
+}
+
+.checkout-summary h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.summary-items-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.summary-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.summary-item-info {
+    flex-grow: 1;
+}
+
+.summary-item-info p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.summary-item-info p:last-child {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.summary-item-price {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-top: 15px;
+    color: #555;
+}
+
+.summary-divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+.summary-total {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000;
+}
+
+/* === THÊM VÀO CUỐI FILE CHECKOUTPAGE.CSS === */
+
+/* Kiểu dáng cho trang giỏ hàng trống */
+.checkout-container-empty {
+    text-align: center;
+    padding: 60px 30px;
+    background-color: #f9f9f9;
+    border: 1px dashed #ddd;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.checkout-container-empty h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 15px 0;
+    /* Sửa lại margin */
+}
+
+.checkout-container-empty p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.checkout-container-empty a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.checkout-container-empty a:hover {
+    background-color: #0056b3;
+}
+
+/* Thêm vào cuối file CheckoutPage.css */
+
+.calculating-fee {
+    font-style: italic;
+    color: #555;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+/* --- THÊM KHỐI NÀY VÀO --- */
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+}

@@ -1,7 +1,8 @@
 /* Tổng thể cho container của footer */
 .footer-container {
     background-color: #f6f6f6;
-    padding: 70px 0;
+    padding-top: 40px;
+    padding-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     /* Sử dụng font chữ giống hoặc tương tự */
     color: #555;
@@ -130,4 +131,11 @@
         width: 100%;
         text-align: center;
     }
+}
+.response-message {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #4CAF50;
+    /* Màu xanh lá (thành công) */
+    /* Bạn có thể đổi màu tùy ý */
 }

@@ -12,7 +12,7 @@ import supportImage2 from '../images/support-9.png';
 import supportImage3 from '../images/support-10.png';
 
 const images = [section1Image, section2Image];
-const delay = 10000;
+const delay = 5000;
 
 const HomePage = () => {
     // State cho slider ảnh
@@ -65,11 +65,13 @@ const HomePage = () => {
         setMessage('Đang xử lý...');
 
         try {
-            const response = await fetch('https://api.yourdomain.com/subscribe', { // <-- THAY THẾ BẰNG URL API THỰC TẾ
+            // --- ĐÂY LÀ DÒNG ĐÃ ĐƯỢC CẬP NHẬT ---
+            const response = await fetch('http://localhost:8080/api/subscribe', { 
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email: email }),
             });
+            // ------------------------------------
 
             const data = await response.json();
 

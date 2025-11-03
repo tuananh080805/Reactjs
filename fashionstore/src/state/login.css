@@ -1,0 +1,111 @@
+/* src/components/login.css */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 80vh;
+    /* Đảm bảo form nằm giữa trang theo chiều dọc */
+    background-color: #f9f9f9;
+}
+
+.login-form {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+.login-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Quan trọng để padding không làm vỡ layout */
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    /* Màu highlight khi focus */
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    /* Màu xanh dương chủ đạo */
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+    /* Đậm hơn khi hover */
+}
+
+/* Kiểu cho nút khi bị vô hiệu hóa (đang loading) */
+.login-button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Kiểu cho thông báo lỗi */
+.error-message {
+    background-color: #f8d7da;
+    /* Nền đỏ nhạt */
+    color: #721c24;
+    /* Chữ đỏ đậm */
+    padding: 12px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Kiểu cho link đăng ký */
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #555;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

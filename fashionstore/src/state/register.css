@@ -1,0 +1,100 @@
+    .register-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        /* Căn giữa theo chiều dọc */
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+    .register-form {
+        background-color: #ffffff;
+        padding: 2.5rem;
+        /* 40px */
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        max-width: 450px;
+        /* Giới hạn độ rộng của form */
+        box-sizing: border-box;
+    }
+
+    .register-form h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        /* 8px */
+        font-weight: 600;
+        color: #555;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        /* Đảm bảo padding không làm tăng width */
+        font-size: 16px;
+    }
+
+    .register-button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        /* Màu đen cơ bản */
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .register-button:hover {
+        background-color: #A749FF;
+        /* Màu tím bạn dùng ở navbar */
+    }
+
+    .register-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    .error-message {
+        background-color: #ffebee;
+        color: #c62828;
+        border: 1px solid #c62828;
+        padding: 12px;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .login-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #555;
+    }
+
+    .login-link a {
+        color: #A749FF;
+        /* Màu tím */
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }

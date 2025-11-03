@@ -1,0 +1,473 @@
+/* Tổng thể trang */
+.shop-page {
+    padding: 40px 5%;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.breadcrumb span {
+    margin-right: 5px;
+}
+
+.shop-container {
+    display: flex;
+    gap: 40px;
+}
+
+/* Thanh bộ lọc bên trái */
+.filters {
+    flex: 0 0 250px;
+    /* Không co giãn, chiều rộng cố định */
+}
+
+.filter-group {
+    margin-bottom: 35px;
+}
+
+.filter-group h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-box button {
+    background-color: transparent;
+    border: none;
+    padding: 0 12px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    accent-color: #555;
+    /* Tùy chỉnh màu của checkbox khi được chọn */
+}
+
+.checkbox-item label {
+    font-size: 15px;
+    color: #555;
+}
+
+/* Khu vực hiển thị sản phẩm chính */
+.product-listing {
+    flex-grow: 1;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort-dropdown {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.view-options {
+    display: flex;
+    gap: 8px;
+}
+
+.view-btn {
+    background: none;
+    border: 1px solid transparent;
+    font-size: 20px;
+    padding: 8px;
+    cursor: pointer;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.view-btn.active,
+.view-btn:hover {
+    color: #000;
+}
+
+.products-grid {
+    /* CSS cho lưới sản phẩm sẽ được thêm vào đây */
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    min-height: 300px;
+    /* Chiều cao tối thiểu để thấy nội dung */
+    align-items: start;
+}
+
+.products-grid p {
+    color: #aaa;
+}
+/* =================================== */
+/* BẮT ĐẦU PHẦN CSS MỚI CHO SẢN PHẨM   */
+/* =================================== */
+
+/* CSS cho bộ lọc giá (radio button) - Thêm nếu bạn chưa có */
+.radio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-item input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    accent-color: #555;
+}
+
+.radio-item label {
+    font-size: 15px;
+    color: #555;
+}
+
+/* CẬP NHẬT: CSS cho lưới sản phẩm (.products-grid) 
+  Sử dụng CSS Grid để tạo layout responsive.
+*/
+.products-grid {
+    display: grid;
+    /* Tự động tạo các cột:
+     - auto-fill: Tự động lấp đầy không gian.
+     - minmax(250px, 1fr): Mỗi cột có chiều rộng tối thiểu 250px
+       và tối đa là 1 phần (1fr), cho phép chúng co giãn bằng nhau.
+    */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    /* Khoảng cách giữa các sản phẩm */
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    min-height: 300px;
+}
+
+/* THÊM MỚI: CSS cho từng thẻ sản phẩm (.product-item) 
+*/
+.product-item {
+    display: flex;
+    flex-direction: column;
+    /* Quan trọng: để đẩy nút "Thêm vào giỏ" xuống dưới */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ẩn bất cứ thứ gì tràn ra khỏi góc tròn */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    /* Hiệu ứng nhấc thẻ lên khi hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Định dạng cho ảnh sản phẩm (Bạn sẽ sớm thêm vào) */
+.product-item img {
+    width: 100%;
+    height: 300px;
+    /* Chiều cao cố định cho ảnh */
+    object-fit: cover;
+    /* Đảm bảo ảnh lấp đầy khung mà không bị méo */
+    background-color: #f9f9f9;
+    /* Màu nền cho ảnh nếu ảnh bị lỗi */
+}
+
+/* Định dạng cho tên sản phẩm */
+.product-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 15px 15px 5px 15px;
+    /* Trên | Phải | Dưới | Trái */
+    color: #222;
+}
+
+/* Định dạng cho loại sản phẩm */
+.product-item .product-category {
+    font-size: 13px;
+    color: #888;
+    margin: 0 15px 10px 15px;
+}
+
+/* Định dạng cho giá sản phẩm */
+.product-item .product-price {
+    font-size: 17px;
+    font-weight: bold;
+    color: #d73737;
+    /* Màu đỏ cho giá để nổi bật */
+    margin: 0 15px 15px 15px;
+}
+
+/* Định dạng cho nút "Thêm vào giỏ" */
+.product-item button {
+    margin-top: auto;
+    /* Đây là trick để đẩy nút xuống đáy thẻ flex */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.product-item button:hover {
+    background-color: #555;
+}
+.product-item-image {
+    width: 100%;
+    /* Làm cho ảnh vừa vặn với thẻ div .product-item */
+    height: 250px;
+    /* Đặt chiều cao cố định (bạn có thể thay đổi) */
+    object-fit: cover;
+    /* Đảm bảo ảnh không bị méo, sẽ crop nếu cần */
+    border-radius: 8px;
+    /* Bo góc cho đẹp */
+    margin-bottom: 12px;
+}
+.product-item-link {
+    text-decoration: none;
+    /* <-- Tắt gạch chân */
+    color: inherit;
+    /* <-- Giữ màu chữ gốc (của h3, p...) */
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    /* Khoảng cách giữa các nút */
+    margin-top: 40px;
+    /* Khoảng cách với lưới sản phẩm ở trên */
+    padding-bottom: 20px;
+    /* Thêm chút đệm ở dưới */
+}
+
+.pagination button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 38px;
+    /* Chiều rộng tối thiểu */
+    height: 38px;
+    /* Chiều cao cố định */
+
+    padding: 0 12px;
+    /* Padding ngang (cho nút 'Trước'/'Sau' nếu cần) */
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    /* In đậm số */
+
+    color: #555;
+    /* Màu chữ (giống các bộ lọc) */
+    background-color: #fff;
+    /* Nền trắng */
+
+    border: 1px solid #ccc;
+    /* Viền xám nhạt (giống search-box) */
+    border-radius: 4px;
+    /* Bo góc */
+
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* 1. Hiệu ứng khi di chuột vào (chỉ áp dụng nếu không active và không disabled) */
+.pagination button:not(:disabled):not(.active):hover {
+    background-color: #f4f4f4;
+    /* Nền xám rất nhạt */
+    border-color: #aaa;
+}
+
+/* 2. Trạng thái nút được chọn (trang hiện tại) */
+.pagination button.active {
+    background-color: #333;
+    /* Nền đen (giống nút "Thêm vào giỏ") */
+    color: #fff;
+    /* Chữ trắng */
+    border-color: #333;
+    font-weight: bold;
+}
+
+/* 3. Trạng thái nút bị vô hiệu hóa (nút Lùi/Tiến ở đầu/cuối) */
+.pagination button:disabled {
+    background-color: #f9f9f9;
+    color: #ccc;
+    /* Màu chữ mờ */
+    border-color: #eee;
+    cursor: not-allowed;
+    /* Con trỏ "cấm" */
+}
+.admin-header {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    /* Đặt nút ở bên phải */
+}
+
+.btn-add-new {
+    background-color: #28a745;
+    /* Màu xanh lá */
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-add-new:hover {
+    background-color: #218838;
+}
+
+/* 2. Các nút "Sửa" và "Xóa" trên mỗi sản phẩm */
+.admin-actions {
+    display: grid;
+    /* Dùng grid cho 2 cột bằng nhau */
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    /* Không có khoảng cách */
+    margin-top: 10px;
+    /* Tách biệt với nút "Thêm vào giỏ" */
+}
+
+.admin-actions .btn-edit,
+.admin-actions .btn-delete {
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.admin-actions .btn-edit {
+    background-color: #ffc107;
+    /* Màu vàng */
+    color: #333;
+    border-bottom-left-radius: 8px;
+    /* Bo góc trái */
+}
+
+.admin-actions .btn-delete {
+    background-color: #dc3545;
+    /* Màu đỏ */
+    color: white;
+    border-bottom-right-radius: 8px;
+    /* Bo góc phải */
+}
+
+.admin-actions .btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.admin-actions .btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* 3. Sửa lại nút "Thêm vào giỏ" để nó không bị bo góc dưới
+      khi admin đăng nhập */
+.product-item button.btn-add-to-cart {
+    /* Đổi tên từ .product-item button -> .product-item .btn-add-to-cart */
+    margin-top: auto;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    transition: background-color 0.2s;
+
+    /* Ghi chú: Không bo góc ở đây nữa */
+}
+
+.product-item button.btn-add-to-cart:hover {
+    background-color: #555;
+}
+
+
+/* 4. Điều chỉnh thẻ .product-item
+   Vì chúng ta thêm .admin-actions, chúng ta cần đảm bảo
+   nó không bo góc ở dưới cùng nữa
+*/
+.product-item {
+    /* ... (các style cũ của bạn) ... */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Đảm bảo Link không làm hỏng bo góc khi là admin */
+.product-item-link:has(.admin-actions) .product-item {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* TÌM CLASS NÀY */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    position: relative;
+    /* 👈 THÊM DÒNG NÀY */
+}
